@@ -2,7 +2,9 @@
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', '<?php echo $data[Msw_Google_Analytics::$ID_KEY]; ?>']);
+  <?php if ( isset( $data[Msw_Google_Analytics::$DOMAIN_KEY] ) && strlen( $data[Msw_Google_Analytics::$DOMAIN_KEY] ) > 0 ): ?>
   _gaq.push(['_setDomainName', '<?php echo $data[Msw_Google_Analytics::$DOMAIN_KEY]; ?>']);
+  <?php endif; ?>
   _gaq.push(['_trackPageview']);
 
   (function() {

@@ -1,13 +1,13 @@
 <div class="wrap">
-	
-	<div id="icon-options-general" class="icon32"><br></div>
+
+	<div id="icon-plugins" class="icon32"><br></div>
 	<h2><?php echo Msw_Google_Analytics::$PLUGIN_NAME; ?></h2>
 	<p>This plugin will insert the same Google Analytics code across all sites.</p>
 
 	<?php if ( isset( $data['saved'] ) ): ?>
 	<div id="message" class="updated"><p>Your settings have been saved.</p></div>
 	<?php endif; ?>
-
+	
 	<form method="post">
 
 		<table class="form-table">
@@ -23,27 +23,37 @@
 							/></td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="<?php echo Msw_Google_Analytics::$ID_KEY; ?>">Identifier</label></th>
-					<td><input type="text" 
+					<th scope="row"><label for="<?php echo Msw_Google_Analytics::$ID_KEY; ?>">Account Number (Required)</label></th>
+					<td>
+						<input type="text" 
+							class="regular-text"
 							id="<?php echo Msw_Google_Analytics::$ID_KEY; ?>" 
 							name="<?php echo Msw_Google_Analytics::$ID_KEY; ?>" 
 							value="<?php echo $data[Msw_Google_Analytics::$ID_KEY]; ?>"
-							placeholder="This is the Google identifier for the _setAccount variable."
-							/></td>
+							placeholder="Your Google identifier for the _setAccount variable."
+							/><br>
+						For more information, please read Google's documents regarding 
+						<a target="_BLANK" href="https://developers.google.com/analytics/devguides/collection/gajs/methods/gaJSApiBasicConfiguration#_gat.GA_Tracker_._setAccount">_setAccount()</a>.
+					</td>
 				</tr>
 				<tr valign="top">
 					<th scope="row"><label for="<?php echo Msw_Google_Analytics::$DOMAIN_KEY; ?>">Domain</label></th>
-					<td><input type="text" 
+					<td>
+						<input type="text" 
+							class="regular-text"
 							id="<?php echo Msw_Google_Analytics::$DOMAIN_KEY; ?>" 
 							name="<?php echo Msw_Google_Analytics::$DOMAIN_KEY; ?>" 
 							value="<?php echo $data[Msw_Google_Analytics::$DOMAIN_KEY]; ?>"
-							placeholder="This is the domain for the _setDomainName variable."
-							/></td>
+							placeholder="Your domain for the _setDomainName variable."
+							/><br>
+						For more information, please read Google's documents regarding 
+						<a target="_BLANK" href="https://developers.google.com/analytics/devguides/collection/gajs/gaTrackingSite#yourDomainName">_setDomainName('.yourDomainName')</a>.
+					</td>
 				</tr>
 			</tbody>
 		</table>
 
-		<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="Save Changes"></p>
+		<p class="submit"><input type="submit" name="Save" id="Save" class="button-primary" value="<?php _e('Save Options'); ?>"></p>
 
 	</form>
 

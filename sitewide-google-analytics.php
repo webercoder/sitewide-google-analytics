@@ -39,7 +39,7 @@ class Msw_Google_Analytics {
 		$domain = get_option( self::$DOMAIN_KEY, false );
 		$enabled = get_option( self::$ENABLED_KEY, false );
 		
-		if ( $id && $domain && $enabled ) {
+		if ( isset( $id ) && !empty( $id ) && $enabled ) {
 			self::render_template( 'output-analytics', array(
 				self::$ID_KEY		=> $id,
 				self::$DOMAIN_KEY	=> $domain,
@@ -69,7 +69,7 @@ class Msw_Google_Analytics {
 			self::$ENABLED_KEY   => get_option( self::$ENABLED_KEY, false )
 		);
 		
-		if ( isset( $_POST[ 'submit' ] ) ) {
+		if ( isset( $_POST[ 'Save' ] ) ) {
 			
 			$data[self::$ID_KEY] = self::purify( $_POST[self::$ID_KEY] );
 			$data[self::$DOMAIN_KEY] = self::purify( $_POST[self::$DOMAIN_KEY] );
@@ -83,7 +83,7 @@ class Msw_Google_Analytics {
 		
 		}
 		
-		Msw_Util::render_template( 'analytics-form', $data);
+		self::render_template( 'analytics-form', $data);
 		
 	}
 	
@@ -92,7 +92,6 @@ class Msw_Google_Analytics {
 	}
 
 	private static function render_template( $name, $data ) {
-		$view_folder = str_replace( '_', '-', strToLower( $class ) );
 		$path = join( DIRECTORY_SEPARATOR, array(
 			dirname(__FILE__), 'templates', $name . '.php' )
 		);
