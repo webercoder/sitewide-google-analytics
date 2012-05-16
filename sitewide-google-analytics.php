@@ -25,9 +25,14 @@ class Msw_Google_Analytics {
 	}
 	
 	public static function create_analytics_menu() {
-        if ( is_multisite() ) { $capability = 'manage_network'; }
-        else { $capability = 'activate_plugins' }
-		add_submenu_page( 'settings.php', self::$PLUGIN_NAME, self::$PLUGIN_NAME,
+        if ( is_multisite() ) {
+            $capability = 'manage_network';
+            $slug = 'settings.php';
+        } else {
+            $capability = 'activate_plugins';
+            $slug = 'options-general.php';
+        }
+		add_submenu_page( $slug, self::$PLUGIN_NAME, self::$PLUGIN_NAME,
 				$capability, self::$PLUGIN_KEY, 'Msw_Google_Analytics::output_analytics_form');
 	}
 	
