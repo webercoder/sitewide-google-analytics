@@ -1,7 +1,7 @@
 <div class="wrap">
 
 	<div id="icon-plugins" class="icon32"><br></div>
-	<h2><?php echo Sga_Google_Analytics::$PLUGIN_NAME; ?></h2>
+	<h2><?php echo Sitewide_Google_Analytics::$PLUGIN_NAME; ?></h2>
 	<p>This plugin will insert the same Google Analytics code across all sites.</p>
 
 	<?php if ( isset( $data['saved'] ) ): ?>
@@ -13,23 +13,23 @@
 		<table class="form-table">
 			<tbody>
 				<tr valign="top">
-					<th scope="row"><label for="<?php echo Sga_Google_Analytics::$ENABLED_KEY; ?>">Enabled</label></th>
+					<th scope="row"><label for="<?php echo Sitewide_Google_Analytics::$ENABLED_KEY; ?>">Enabled</label></th>
 					<td><input type="checkbox" 
-							id="<?php echo Sga_Google_Analytics::$ENABLED_KEY; ?>" 
-							name="<?php echo Sga_Google_Analytics::$ENABLED_KEY; ?>" 
-							<?php if ($data[Sga_Google_Analytics::$ENABLED_KEY]): ?>
+							id="<?php echo Sitewide_Google_Analytics::$ENABLED_KEY; ?>" 
+							name="<?php echo Sitewide_Google_Analytics::$ENABLED_KEY; ?>" 
+							<?php if ($data[Sitewide_Google_Analytics::$ENABLED_KEY]): ?>
 							checked="checked"
 							<?php endif; ?>
 							/></td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="<?php echo Sga_Google_Analytics::$ID_KEY; ?>">Account Number (Required)</label></th>
+					<th scope="row"><label for="<?php echo Sitewide_Google_Analytics::$ID_KEY; ?>">Account Number (Required)</label></th>
 					<td>
 						<input type="text" 
 							class="regular-text"
-							id="<?php echo Sga_Google_Analytics::$ID_KEY; ?>" 
-							name="<?php echo Sga_Google_Analytics::$ID_KEY; ?>" 
-							value="<?php echo $data[Sga_Google_Analytics::$ID_KEY]; ?>"
+							id="<?php echo Sitewide_Google_Analytics::$ID_KEY; ?>" 
+							name="<?php echo Sitewide_Google_Analytics::$ID_KEY; ?>" 
+							value="<?php echo $data[Sitewide_Google_Analytics::$ID_KEY]; ?>"
 							placeholder="Your Google identifier for the _setAccount variable."
 							/><br>
 						For more information, please read Google's documents regarding 
@@ -37,13 +37,13 @@
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="<?php echo Sga_Google_Analytics::$DOMAIN_KEY; ?>">Domain</label></th>
+					<th scope="row"><label for="<?php echo Sitewide_Google_Analytics::$DOMAIN_KEY; ?>">Domain</label></th>
 					<td>
 						<input type="text" 
 							class="regular-text"
-							id="<?php echo Sga_Google_Analytics::$DOMAIN_KEY; ?>" 
-							name="<?php echo Sga_Google_Analytics::$DOMAIN_KEY; ?>" 
-							value="<?php echo $data[Sga_Google_Analytics::$DOMAIN_KEY]; ?>"
+							id="<?php echo Sitewide_Google_Analytics::$DOMAIN_KEY; ?>" 
+							name="<?php echo Sitewide_Google_Analytics::$DOMAIN_KEY; ?>" 
+							value="<?php echo $data[Sitewide_Google_Analytics::$DOMAIN_KEY]; ?>"
 							placeholder="Your domain for the _setDomainName variable."
 							/><br>
 						For more information, please read Google's documents regarding 

@@ -1,9 +1,9 @@
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '<?php echo $data[Sga_Google_Analytics::$ID_KEY]; ?>']);
-  <?php if ( isset( $data[Sga_Google_Analytics::$DOMAIN_KEY] ) && strlen( $data[Sga_Google_Analytics::$DOMAIN_KEY] ) > 0 ): ?>
-  _gaq.push(['_setDomainName', '<?php echo $data[Sga_Google_Analytics::$DOMAIN_KEY]; ?>']);
+  _gaq.push(['_setAccount', '<?php echo $data[Sitewide_Google_Analytics::$ID_KEY]; ?>']);
+  <?php if ( isset( $data[Sitewide_Google_Analytics::$DOMAIN_KEY] ) && strlen( $data[Sitewide_Google_Analytics::$DOMAIN_KEY] ) > 0 ): ?>
+  _gaq.push(['_setDomainName', '<?php echo $data[Sitewide_Google_Analytics::$DOMAIN_KEY]; ?>']);
   <?php endif; ?>
   _gaq.push(['_trackPageview']);
 

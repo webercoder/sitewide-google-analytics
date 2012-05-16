@@ -25,7 +25,7 @@ License: GPL2
 */
 
 
-class Sga_Google_Analytics {
+class Sitewide_Google_Analytics {
 	
 	public static $PLUGIN_NAME = 'Sitewide Google Analytics';
 	public static $PLUGIN_KEY = 'sitewide-google-analytics';
@@ -58,7 +58,7 @@ class Sga_Google_Analytics {
 			$slug = 'options-general.php';
 		}
 		add_submenu_page( $slug, self::$PLUGIN_NAME, self::$PLUGIN_NAME,
-				$capability, self::$PLUGIN_KEY, 'Sga_Google_Analytics::output_analytics_form');
+				$capability, self::$PLUGIN_KEY, 'Sitewide_Google_Analytics::output_analytics_form');
 	}
 	
 	public static function output_analytics_form() {
@@ -100,9 +100,9 @@ class Sga_Google_Analytics {
 
 }
 
-add_action( 'wp_print_footer_scripts', 'Sga_Google_Analytics::output_analytics' );
+add_action( 'wp_print_footer_scripts', 'Sitewide_Google_Analytics::output_analytics' );
 if ( is_multisite() ) {
-	add_action( 'network_admin_menu', 'Sga_Google_Analytics::create_analytics_menu' );
+	add_action( 'network_admin_menu', 'Sitewide_Google_Analytics::create_analytics_menu' );
 } else {
-	add_action( 'admin_menu', 'Sga_Google_Analytics::create_analytics_menu' );
+	add_action( 'admin_menu', 'Sitewide_Google_Analytics::create_analytics_menu' );
 }
