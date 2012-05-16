@@ -16,8 +16,8 @@ class Msw_Google_Analytics {
 		
 		if ( $id && $domain && $enabled ) {
 			self::render_template( 'output-analytics', array(
-				self::$ID_KEY        => $id,
-				self::$DOMAIN_KEY    => $domain,
+				self::$ID_KEY		=> $id,
+				self::$DOMAIN_KEY	=> $domain,
 				self::$ENABLED_KEY   => $enabled
 			) );
 		}
@@ -25,13 +25,13 @@ class Msw_Google_Analytics {
 	}
 	
 	public static function create_analytics_menu() {
-        if ( is_multisite() ) {
-            $capability = 'manage_network';
-            $slug = 'settings.php';
-        } else {
-            $capability = 'activate_plugins';
-            $slug = 'options-general.php';
-        }
+		if ( is_multisite() ) {
+			$capability = 'manage_network';
+			$slug = 'settings.php';
+		} else {
+			$capability = 'activate_plugins';
+			$slug = 'options-general.php';
+		}
 		add_submenu_page( $slug, self::$PLUGIN_NAME, self::$PLUGIN_NAME,
 				$capability, self::$PLUGIN_KEY, 'Msw_Google_Analytics::output_analytics_form');
 	}
@@ -39,8 +39,8 @@ class Msw_Google_Analytics {
 	public static function output_analytics_form() {
 		
 		$data = array(
-			self::$ID_KEY        => get_option( self::$ID_KEY, '' ),
-			self::$DOMAIN_KEY    => get_option( self::$DOMAIN_KEY, '' ),
+			self::$ID_KEY		=> get_option( self::$ID_KEY, '' ),
+			self::$DOMAIN_KEY	=> get_option( self::$DOMAIN_KEY, '' ),
 			self::$ENABLED_KEY   => get_option( self::$ENABLED_KEY, false )
 		);
 		
@@ -69,17 +69,17 @@ class Msw_Google_Analytics {
 	private static function render_template( $name, $data ) {
 		$view_folder = str_replace( '_', '-', strToLower( $class ) );
 		$path = join( DIRECTORY_SEPARATOR, array(
-            dirname(__FILE__), 'templates', $name . '.php' )
-        );
-        include( $path );
+			dirname(__FILE__), 'templates', $name . '.php' )
+		);
+		include( $path );
 	}
 
 }
 
 add_action( 'wp_print_footer_scripts', 'Msw_Google_Analytics::output_analytics' );
 if ( is_multisite() ) {
-    add_action( 'network_admin_menu', 'Msw_Google_Analytics::create_analytics_menu' );
+	add_action( 'network_admin_menu', 'Msw_Google_Analytics::create_analytics_menu' );
 } else {
-    add_action( 'admin_menu', 'Msw_Google_Analytics::create_analytics_menu' );
+	add_action( 'admin_menu', 'Msw_Google_Analytics::create_analytics_menu' );
 }
 
