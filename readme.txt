@@ -8,12 +8,12 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin adds Google Analytics tracking code to all WordPress pages. In network/multisite mode, this tracking code 
-will be *the same* on all sites.
+will be the same on all sites.
 
 == Description ==
 
 This plugin adds Google Analytics tracking code to all WordPress pages. If multisite/network mode is enabled, this 
-tracking code will be *the same* on all sites, which was the main purpose for authoring it.
+tracking code will be the same on all sites, which was the main purpose for authoring it.
 
 It's very basic.
 
