@@ -35,9 +35,9 @@ class Sitewide_Google_Analytics {
 	
 	public static function output_analytics() {
 		
-		$id = get_option( self::$ID_KEY, false );
-		$domain = get_option( self::$DOMAIN_KEY, false );
-		$enabled = get_option( self::$ENABLED_KEY, false );
+		$id = get_site_option( self::$ID_KEY, false );
+		$domain = get_site_option( self::$DOMAIN_KEY, false );
+		$enabled = get_site_option( self::$ENABLED_KEY, false );
 		
 		if ( isset( $id ) && !empty( $id ) && $enabled ) {
 			self::render_template( 'output-analytics', array(
@@ -64,9 +64,9 @@ class Sitewide_Google_Analytics {
 	public static function output_analytics_form() {
 		
 		$data = array(
-			self::$ID_KEY		=> get_option( self::$ID_KEY, '' ),
-			self::$DOMAIN_KEY	=> get_option( self::$DOMAIN_KEY, '' ),
-			self::$ENABLED_KEY   => get_option( self::$ENABLED_KEY, false )
+			self::$ID_KEY		=> get_site_option( self::$ID_KEY, '' ),
+			self::$DOMAIN_KEY	=> get_site_option( self::$DOMAIN_KEY, '' ),
+			self::$ENABLED_KEY 	=> get_site_option( self::$ENABLED_KEY, false )
 		);
 		
 		if ( isset( $_POST[ 'Save' ] ) ) {
@@ -75,9 +75,9 @@ class Sitewide_Google_Analytics {
 			$data[self::$DOMAIN_KEY] = self::purify( $_POST[self::$DOMAIN_KEY] );
 			$data[self::$ENABLED_KEY] = ( $_POST[self::$ENABLED_KEY] === 'on' ? true : false );
 			
-			update_option( self::$ID_KEY, $data[self::$ID_KEY] );
-			update_option( self::$DOMAIN_KEY, $data[self::$DOMAIN_KEY] );
-			update_option( self::$ENABLED_KEY, $data[self::$ENABLED_KEY] );
+			update_site_option( self::$ID_KEY, $data[self::$ID_KEY] );
+			update_site_option( self::$DOMAIN_KEY, $data[self::$DOMAIN_KEY] );
+			update_site_option( self::$ENABLED_KEY, $data[self::$ENABLED_KEY] );
 			
 			$data['saved'] = true;
 		
