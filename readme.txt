@@ -3,7 +3,7 @@ Contributors: coderguy
 Tags: google, analytics, sitewide, network, multisite
 Requires at least: 3.1
 Tested up to: 3.4.2
-Stable tag: 1.2
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,12 @@ https://developers.google.com/analytics/devguides/collection/gajs/gaTrackingSite
 
 == Changelog ==
 
+= 1.2.2 =
+* Forcing wordpress to update by updating stable tag in the header above.
+
+= 1.2.1 =
+* Added upgrade information to this log.
+
 = 1.2 =
 * update_option and get_option changed to update_site_option and get_site_option.
 
@@ -55,6 +61,10 @@ https://developers.google.com/analytics/devguides/collection/gajs/gaTrackingSite
 * Initial submission.
 
 == Upgrade Notice ==
+
+= 1.2.2 =
+
+Please fill in your Google Analytics details again.
 
 = 1.1 =
 
