@@ -2,8 +2,8 @@
 Contributors: coderguy
 Tags: google, analytics, sitewide, network, multisite
 Requires at least: 3.1
-Tested up to: 3.3.2
-Stable tag: 1.1
+Tested up to: 3.4.2
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,9 @@ https://developers.google.com/analytics/devguides/collection/gajs/gaTrackingSite
 1. This is the administrative section of Sitewide Google Analytics.
 
 == Changelog ==
+
+= 1.2 =
+* update_option and get_option changed to update_site_option and get_site_option.
 
 = 1.1 =
 * Added templates (previous version is non-working).
